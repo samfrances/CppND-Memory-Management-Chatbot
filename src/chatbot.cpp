@@ -63,6 +63,9 @@ ChatBot::ChatBot(ChatBot &&source) {
     _chatLogic = source._chatLogic;
     source._chatLogic = nullptr;
 
+    // Make sure handle remains
+    _chatLogic->SetChatbotHandle(this);
+
 }
 
 // move assignment operator
@@ -87,6 +90,9 @@ ChatBot& ChatBot::operator=(ChatBot &&source) {
 
     _chatLogic = source._chatLogic;
     source._chatLogic = nullptr;
+
+    // Make sure handle remains
+    _chatLogic->SetChatbotHandle(this);
 
     return *this;
 }
