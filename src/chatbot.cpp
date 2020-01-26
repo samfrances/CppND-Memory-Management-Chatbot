@@ -68,7 +68,7 @@ ChatBot::ChatBot(ChatBot &&source) {
 // move assignment operator
 ChatBot& ChatBot::operator=(ChatBot &&source) {
     std::cout << "ChatBot Move Assignment Operator" << std::endl;
-    f (this == &source)
+    if (this == &source)
         return *this;
 
     delete _image;
